@@ -297,7 +297,7 @@
 }
 
 .image__gray {
-  filter: grayscale(0.5);
+  filter: contrast(140%);
 }
 
 .image__blur {
