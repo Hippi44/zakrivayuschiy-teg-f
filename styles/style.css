@@ -303,6 +303,10 @@
   filter: blur(0.8px);
 }
 
+.image__contr {
+  filter: contrast(150%);
+}
+
 .card__button:focus {
   outline: none;
 }
