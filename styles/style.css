@@ -301,7 +301,7 @@
 }
 
 .image__blur {
-  filter: blur(0.8px);
+  filter: blur(5px) grayscale(20%) saturate(200%) invert(30%) hue-rotate(180deg);
 }
 
 .card__button:focus {
