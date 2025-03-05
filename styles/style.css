@@ -23,6 +23,7 @@
   background-image: var(--bg-image);
   background-size: cover;
   background-attachment: fixed;
+  font-variation-settings: 'wght' var(--main-Inter);
 }
 
 /* HEADER */
@@ -276,7 +277,7 @@
 /* Конец Save button */
 
 .image__contrast {
-  filter: contrast(150%);
+  filter: contrast(150%), brightness(120%);
 }
 
 .image__brightness {
@@ -301,10 +302,6 @@
 
 .image__blur {
   filter: blur(0.8px);
-}
-
-.image__contr {
-  filter: contrast(150%);
 }
 
 .card__button:focus {
