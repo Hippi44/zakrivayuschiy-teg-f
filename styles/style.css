@@ -11,6 +11,350 @@
 */
 
 .page {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--Inter), sans-serif;
+  font-feature-settings: 'wght' var(--main-Inter);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* HEADER */
+
+.clamp-width {
+  inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  max-width: 700px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-block: 100px;
+  text-align: center;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  padding-block: clamp(7.5rem, 6.922rem + 2.5vi, 8rem);
+  max-block-size: 368px;
+  font-family: var(--PressStart2P), sans-serif;
+  line-height: auto;
+  text-transform: uppercase;
+}
+
+.header__title {
+  font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
+}
+
+.header__subtitle {
+  font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+}
+
+.subtitle {
+  font-size: 18px;
+  word-spacing: 1px;
+}
+
+/* Конец HEADER */
+
+/* Начало Main */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 27px;
+  margin: 25px;
+}
+
+.main__text {
+  font-size: 18px;
+  line-height: 21px;
+  word-spacing: 4.5px;
+}
+
+.button__container {
+  display: flex;
+  justify-content: end;
+  gap: 6px;
+  margin-inline-end: 25px;
+  margin-block-end: 25px;
+  max-block-size: 38px;
+}
+
+.card__icon-button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--main-color);
+  max-block-size: 38px;
+}
+
+.love-icon {
+display: flex;
+align-self: center;
+max-block-size: 38px;
+}
+
+.card__button {
+  position: relative;
+  inline-size: 130px;
+  block-size: 38px;
+  font-size: 14px;
+  font-family: var(--PressStart2P);
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  cursor: pointer;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.image {
+  width: clamp(371px, 100%, 696px);
+  max-width: 696px;
+  max-height: 696px;
+  height: 500px;
+}
+
+.image__container {
+  position: relative;
+  border-block: 2px solid var(--main-color);
+  font-family: var(--PressStart2P), sans-serif;
+  font-size: 14px;
+  max-block-size: 100%;
+}
+
+.label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 2;
+  -webkit-text-stroke: 1px #fff;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.subtitle-container {
+  display: flex;
+  align-items: center;
+  padding: 3px 10px;
+  min-block-size: 31px;
+  font-weight: bold;
+  text-align: left center;
+}
+
+/* Save button */
+
+.article {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.save__button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 8px;
+  border: 2px solid var(--main-color);
+  font-family: var(--PressStart2P);
+  background-color: var(--bg-color);
+  inline-size: clamp(306px, 80%, 335px);
+  block-size: 55px;
+  margin: 0 0 105px 0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  color: var(--accent-color);
+}
+
+.save__button .button__floppy {
+  position: relative;
+  mix-blend-mode: difference;
+}
+
+.button__floppy {
+  width: 21px;
+  height: 21px;
+}
+
+.text__button {
+  font-size: 14px;
+}
+
+.dialog {
+  inline-size: clamp(341px, 80%, 353px);
+  padding: 30px;
+}
+
+.dialog[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dialog::backdrop {
+  opacity: 75%;
+  background-color: var(--main-color);
+}
+
+.dialog__subtitle {
+  font-family: var(--PressStart2P), sans-serif;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.container__text-dialog {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.dialog__floppy-icon {
+  max-inline-size: 39px;
+  max-block-size: 39px;
+}
+
+.close-button {
+  position: relative;
+  overflow: hidden;
+  inline-size: 100%;
+  max-block-size: 38px;
+  background-color: var(--bg-color);
+  padding-block: 12.5px;
+  justify-self: end;
+  font-family: var(--PressStart2P);
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.button__decore-close {
+  position: relative;
+  color: var(--accent-color);
+  mix-blend-mode: difference;
+}
+
+.button__decore-text {
+  position: relative;
+  color: var(--accent-color);
+  mix-blend-mode: difference;
+}
+
+/* Конец Save button */
+
+.image__contrast {
+  filter: contrast(150%);
+}
+
+.image__brightness {
+  filter: brightness(140%);
+}
+
+.image__saturate {
+  filter: saturate(120%);
+}
+
+.image__opacity {
+  filter: opacity(90%);
+}
+
+.image__hue-rotate {
+  filter: hue-rotate(170deg);
+}
+
+.image__gray {
+  filter: grayscale(0.5);
+}
+
+.image__blur {
+  filter: blur(0.8px);
+}
+
+.card__button:focus {
+  outline: none;
+}
+
+.card__button:focus-visible {
+  box-shadow: 2px 2px 0 var(--main-color);
+}
+
+.button__decore::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--main-color);
+  transition: translate 0.5s ease-in-out;
+  translate: -100%;
+}
+
+.button__decore:hover::before {
+  translate: 0;
+}
+
+.save__button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--main-color);
+}
+
+.save__button:focus-visible {
+  box-shadow: 2px 2px 0 var(--main-color);
+}
+
+/* Конец Main */
+
+@supports (text-stroke: 1px #fff) {
+  .label {
+    text-stroke: 1px #fff;
+  }
+}
+
+@media (width <= 768px) {
+  .save__button {
+    flex-direction: column;
+    block-size: 84px;
+    margin-bottom: 100px;
+  }
+
+  .button__floppy {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (width <= 375px) {
+  .label {
+    right: 13px;
+  }
 }
