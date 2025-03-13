@@ -80,10 +80,10 @@
 }
 
 .like-icon.is-liked .heart {
-  animation: increase 0.3s ease-in 0.1s;
+  animation: increasingSize 0.3s ease-in 0.1s;
   transform-origin: center center;
 }
 
 .like-icon.is-liked .sparks {
-  animation: explosion 0.3s 0.3s ease-in;
+  animation: fadeIn 0.3s 0.3s ease-in;
 }
