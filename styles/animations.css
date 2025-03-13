@@ -10,7 +10,7 @@
 
 */
 
-@keyframes increase {
+@keyframes increasingSize {
   0% {
     transform: scale(1);
   }
@@ -20,7 +20,7 @@
   }
 }
 
-@keyframes explosion {
+@keyframes fadeIn {
   100% {
     fill: var(--main-body);
   }
