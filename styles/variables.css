@@ -1,10 +1,8 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --Inter: "Inter-Variable";
-  --PressStart2P: "PressStart2P";
-  --main-Inter: 400;
-  --main-PressStart2P: 400;
-  --title-Inter: 700;
+  --main-font: "Inter-Variable";
+  --accent-font: "PressStart2P";
+  --main-wght: 400;
   --main-color: #000;
   --accent-color: #fff;
   --min-wdth: 23.4375rem;

@@ -10,6 +10,17 @@
 
 */
 
+@supports (font-variation-settings: normal) {
+  body {
+    font-family: var(--main-font), sans-serif;
+    font-variation-settings: 'wght' var(--main-wght);
+  }
+
+  .subtitle-container {
+    font-variation-settings: 'wght' 700;
+  }
+}
+
 .page {
   box-sizing: border-box;
   display: flex;
@@ -18,12 +29,12 @@
   justify-content: center;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--Inter), sans-serif;
-  font-feature-settings: "wght" var(--main-Inter);
+  font-family: var(--main-font), sans-serif;
+  font-feature-settings: "wght" var(--main-wght);
   background-image: var(--bg-image);
   background-size: cover;
   background-attachment: fixed;
-  font-variation-settings: 'wght' var(--main-Inter);
+  font-variation-settings: 'wght' var(--main-wght);
 }
 
 /* HEADER */
@@ -42,9 +53,7 @@
   border: 2px solid var(--main-color);
   background-color: var(--bg-color);
   padding-block: clamp(7.5rem, 6.922rem + 2.5vi, 8rem);
-  max-block-size: 368px;
-  font-family: var(--PressStart2P), sans-serif;
-  line-height: auto;
+  font-family: var(--accent-font), sans-serif;
   text-transform: uppercase;
 }
 
@@ -58,7 +67,6 @@
 
 .subtitle {
   font-size: 18px;
-  word-spacing: 1px;
 }
 
 /* Конец HEADER */
@@ -90,22 +98,34 @@
 .main__text {
   font-size: 18px;
   line-height: 21px;
-  word-spacing: 4.5px;
+}
+
+.button {
+  position: relative;
+  border: 2px solid var(--main-color);
+  background-color: transparent;
+  overflow: hidden;
+  cursor: pointer;
+  font-family: var(--accent-font);
+  color: var(--accent-color);
 }
 
 .button__container {
   display: flex;
   justify-content: end;
-  gap: 6px;
+  gap: 12px;
   margin-inline-end: 25px;
   margin-block-end: 25px;
-  max-block-size: 38px;
 }
 
 .card__icon-button {
+  display: flex;
+  align-items: center;
+  max-block-size: 38px;
   cursor: pointer;
   background-color: transparent;
-  border: none;
+  border: 2px solid transparent;
+  transition: border 0.3s linear;
 }
 
 .card__icon-button:focus {
@@ -114,25 +134,11 @@
 
 .card__icon-button:focus-visible {
   border: 2px solid var(--main-color);
-  max-block-size: 38px;
 }
 
-.love-icon {
-  display: flex;
-  align-self: center;
-  max-block-size: 38px;
-}
-
-.card__button {
-  position: relative;
+.card__like-button {
   inline-size: 130px;
   block-size: 38px;
-  font-size: 14px;
-  font-family: var(--PressStart2P);
-  border: 2px solid var(--main-color);
-  background-color: var(--bg-color);
-  cursor: pointer;
-  overflow: hidden;
   transition: box-shadow 0.3s ease;
 }
 
@@ -140,13 +146,15 @@
   width: clamp(371px, 100%, 696px);
   max-width: 696px;
   max-height: 696px;
-  height: 500px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  max-block-size: 100%;
 }
 
 .image__container {
   position: relative;
   border-block: 2px solid var(--main-color);
-  font-family: var(--PressStart2P), sans-serif;
+  font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   max-block-size: 100%;
 }
@@ -166,10 +174,7 @@
 .subtitle-container {
   display: flex;
   align-items: center;
-  padding: 3px 10px;
-  min-block-size: 31px;
-  font-weight: bold;
-  text-align: left center;
+  padding: 5px 10px;
 }
 
 /* Save button */
@@ -187,16 +192,11 @@
   justify-content: center;
   flex-direction: row;
   gap: 8px;
-  border: 2px solid var(--main-color);
-  font-family: var(--PressStart2P);
-  background-color: var(--bg-color);
   inline-size: clamp(306px, 80%, 335px);
   block-size: 55px;
   margin: 0 0 105px 0;
-  cursor: pointer;
-  overflow: hidden;
+  background-color: var(--accent-color);
   transition: box-shadow 0.3s ease;
-  color: var(--accent-color);
 }
 
 .save__button .button__floppy {
@@ -209,19 +209,15 @@
   height: 21px;
 }
 
-.text__button {
-  font-size: 14px;
-}
-
 .dialog {
   inline-size: clamp(341px, 80%, 353px);
   padding: 30px;
+  gap: 30px;
+  flex-direction: column;
 }
 
 .dialog[open] {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
 }
 
 .dialog::backdrop {
@@ -230,7 +226,7 @@
 }
 
 .dialog__subtitle {
-  font-family: var(--PressStart2P), sans-serif;
+  font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
@@ -249,66 +245,58 @@
 }
 
 .close-button {
-  position: relative;
-  overflow: hidden;
   inline-size: 100%;
-  max-block-size: 38px;
+  padding: 12.5px 0;
   background-color: var(--bg-color);
   padding-block: 12.5px;
   justify-self: end;
-  font-family: var(--PressStart2P);
   font-size: 14px;
   text-transform: uppercase;
   cursor: pointer;
 }
 
-.button__decore-close {
+.button__text {
   position: relative;
   color: var(--accent-color);
   mix-blend-mode: difference;
-}
-
-.button__decore-text {
-  position: relative;
-  color: var(--accent-color);
-  mix-blend-mode: difference;
+  font-size: 14px;
 }
 
 /* Конец Save button */
 
-.image__contrast {
+.filter-contrast {
   filter: contrast(150%), brightness(120%);
 }
 
-.image__brightness {
+.filter-brightness {
   filter: brightness(140%);
 }
 
-.image__saturate {
+.filter-saturate {
   filter: saturate(120%);
 }
 
-.image__opacity {
+.filter-opacity {
   filter: opacity(90%);
 }
 
-.image__hue-rotate {
+.filter-hue-rotate {
   filter: hue-rotate(170deg);
 }
 
-.image__gray {
+.filter-gray {
   filter: contrast(140%);
 }
 
-.image__blur {
+.filter-blur {
   filter: blur(5px) grayscale(20%) saturate(200%) invert(30%) hue-rotate(180deg);
 }
 
-.card__button:focus {
+.button:focus {
   outline: none;
 }
 
-.card__button:focus-visible {
+.button:focus-visible {
   box-shadow: 2px 2px 0 var(--main-color);
 }
 
@@ -323,15 +311,6 @@
 
 .button__decore:hover::before {
   translate: 0;
-}
-
-.save__button:focus {
-  outline: none;
-  box-shadow: 2px 2px 0 var(--main-color);
-}
-
-.save__button:focus-visible {
-  box-shadow: 2px 2px 0 var(--main-color);
 }
 
 /* Конец Main */
@@ -350,8 +329,10 @@
   }
 
   .button__floppy {
-    width: 28px;
+    max-inline-size: 28px;
+    max-block-size: 28px;
     height: 28px;
+    width: 28px;
   }
 }
 
