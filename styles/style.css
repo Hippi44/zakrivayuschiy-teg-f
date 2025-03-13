@@ -10,7 +10,7 @@
 
 */
 
-/* @supports (font-variation-settings: normal) {
+@supports (font-variation-settings: normal) {
   body {
     font-family: var(--main-font), sans-serif;
     font-variation-settings: 'wght' 400;
@@ -19,7 +19,7 @@
   .subtitle-container {
     font-variation-settings: 'wght' 700;
   }
-} */
+}
 
 .page {
   box-sizing: border-box;
