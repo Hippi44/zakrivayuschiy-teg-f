@@ -13,7 +13,7 @@
 @supports (font-variation-settings: normal) {
   body {
     font-family: var(--main-font), sans-serif;
-    font-variation-settings: 'wght' var(--main-wght);
+    font-variation-settings: 'wght' 400;
   }
 
   .subtitle-container {
@@ -30,11 +30,10 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
-  font-feature-settings: "wght" var(--main-wght);
+  font-variation-settings: 'wght' 400;
   background-image: var(--bg-image);
   background-size: cover;
   background-attachment: fixed;
-  font-variation-settings: 'wght' var(--main-wght);
 }
 
 /* HEADER */
